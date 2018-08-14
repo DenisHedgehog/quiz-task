@@ -12,6 +12,6 @@ module.exports = merge(common, {
             filename: "[name].css",
             chunkFilename: "[id].css"
         }),
-        new CopyWebpackPlugin([{from: './questions.json'}])
+        new CopyWebpackPlugin([{from: './questions.json', to: './dist'}])
     ]
 });
