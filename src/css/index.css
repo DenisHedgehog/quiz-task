@@ -22,11 +22,11 @@ body {
 }
 
 .text_color_light {
-    color: lightslategrey;
+    color: rgba(0, 0, 0, 0.4);;
 }
 
 .text_color_mid {
-    color: gray;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .text_size_big {
@@ -42,7 +42,8 @@ body {
 }
 
 .control {
-    padding: 64px;
+    display: flex;
+    padding: 32px;
 }
 
 .control__button {
@@ -52,6 +53,11 @@ body {
     border-radius: 4px;
     color: white;
     background-color: dodgerblue;
+}
+
+.control__status {
+    position: absolute;
+    left: 37%;
 }
 
 .answer {
@@ -86,5 +92,28 @@ body {
     padding: 16px;
     text-align: center;
     background-color: white;
-    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.picture {
+    padding: 8px;
+    width: 40vw;
+}
+
+.status {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    color: white;
+}
+
+.status_correct {
+    background-color: green;
+}
+
+.status_incorrect {
+    background-color: brown;
 }

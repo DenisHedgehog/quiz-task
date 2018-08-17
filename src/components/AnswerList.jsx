@@ -9,7 +9,7 @@ export default class AnswerList extends React.Component {
     render() {
         const answerList = this.props.answers.map(answer =>
             <AnswerItem
-                // classListForItems={this.state.styles[answer.id]}
+                style={this.props.answerStyles[answer.id]}
                 key={answer.id}
                 answer={answer}
                 onClick={this.onAnswerChange.bind(this)} />);

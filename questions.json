@@ -142,7 +142,7 @@
     {
         "id": 7,
         "question": "What does this code do?",
-        "img": "./src./assets/8.png",
+        "img": "./src/assets/8.png",
         "options": [
             {
                 "id": 0,
