@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App.jsx';
+import App from './components/App.jsx';
 import './css/index.css';
-import "babel-polyfill";
+import 'babel-polyfill';
 
 getQuestions().then(questions => { 
-    ReactDOM.render(<App questions={questions} />, document.getElementById('container')); 
+    ReactDOM.render(<App questions={questions} />, document.getElementById('root')); 
 })
 
-async function getQuestions() {
-    const questionRequest = new Request('../questions.json');
-    const questionsResponse = await fetch(questionRequest);
-    return questionsResponse.json();
+function getQuestions() {
+    return fetch('questions.json').then((res) => res.json());
 }

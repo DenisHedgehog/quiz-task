@@ -2,13 +2,13 @@ import React from 'react';
 import Button from './Button.jsx';
 import AnswerStatus from './AnswerStatus.jsx';
 
-export default class Control extends React.Component {
-    render() {
+function Control(props) {
         return (
             <div className="control">
-                <AnswerStatus stage={this.props.stage} status={this.props.status} />
-                <Button onClick={this.props.nextQuestion} text={this.props.stage} />
+                <AnswerStatus stage={props.stage} status={props.status} isOptionRight={props.isOptionRight} />
+                <Button onClick={props.questionAnswered} text={props.stage} />
             </div>
         )
-    }
 }
+
+export default Control;
