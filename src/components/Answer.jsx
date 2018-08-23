@@ -62,7 +62,8 @@ class Answer extends React.Component {
                 <Control
                     stage={this.state.stage}
                     questionAnswered={this.questionAnswered}
-                    isOptionRight={this.isOptionRight} />
+                    isOptionRight={this.isOptionRight}
+                    currentOptionId={this.state.currentOptionId} />
             </div>
         );
     }

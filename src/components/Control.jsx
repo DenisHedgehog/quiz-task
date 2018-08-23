@@ -6,7 +6,11 @@ function Control(props) {
         return (
             <div className="control">
                 <AnswerStatus stage={props.stage} status={props.status} isOptionRight={props.isOptionRight} />
-                <Button onClick={props.questionAnswered} text={props.stage} />
+                <Button 
+                    onClick={props.questionAnswered} 
+                    stage={props.stage} 
+                    text={props.stage}
+                    currentOptionId={props.currentOptionId} />
             </div>
         )
 }

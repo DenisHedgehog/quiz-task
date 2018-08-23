@@ -48,6 +48,10 @@ body {
     background-color: dodgerblue;
 }
 
+.control__button_disabled {
+    background-color: lightgray;
+}
+
 .control__status {
     position: absolute;
     right: 60%;
