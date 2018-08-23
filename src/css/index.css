@@ -66,6 +66,7 @@ body {
     display: flex;
     align-items: center;
     margin: 8px;
+    cursor: pointer;
 }
 
 .option_correct {

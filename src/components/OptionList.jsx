@@ -8,7 +8,9 @@ export default class OptionList extends React.Component {
     }
 
     changeCurrentOption(id) {
-        this.props.changeCurrentOptionId(id);
+        if (this.props.stage === 'Answer') {
+            this.props.changeCurrentOptionId(id);
+        }
     }
 
     getOptionStyle(id) {
