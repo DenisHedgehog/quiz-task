@@ -1,6 +1,6 @@
 import React from 'react';
 
-function AnswerStatus(props) {
+const AnswerStatus = (props) => {
         let status = '';
         if (props.stage === "Next") {
             status = props.isOptionRight() ? 

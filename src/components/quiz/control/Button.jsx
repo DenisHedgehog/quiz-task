@@ -1,7 +1,6 @@
 import React from 'react';
 
 function Button(props) {
-    
     function getButtonStyle() {
         let style = 'control__button text_size_mid';
         if (props.stage === 'Answer' && props.currentOptionId === null) {

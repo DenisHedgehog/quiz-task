@@ -4,12 +4,12 @@ import OptionItem from './OptionItem.jsx';
 export default class OptionList extends React.Component {
     constructor(props) {
         super(props);
-        this.changeCurrentOption = this.changeCurrentOption.bind(this);
+        this.handleCurrentOptionChange = this.handleCurrentOptionChange.bind(this);
     }
 
-    changeCurrentOption(id) {
+    handleCurrentOptionChange(id) {
         if (this.props.stage === 'Answer') {
-            this.props.changeCurrentOptionId(id);
+            this.props.onCurrentOptionIdChange(id);
         }
     }
 
@@ -18,7 +18,7 @@ export default class OptionList extends React.Component {
             switch (true) {
                 case this.props.correctOptionId === id:
                     return 'option option_correct';
-                case this.props.currentOptionId === id && this.props.correctOptionId !== id: 
+                case this.props.currentOptionId === id && this.props.correctOptionId !== id:
                     return 'option option_incorrect';
                 default:
                     return 'option';
@@ -29,17 +29,14 @@ export default class OptionList extends React.Component {
     }
 
     render() {
-        const optionList = this.props.options.map(option =>
-            <OptionItem
-                key={option.id}
-                option={option}
-                changeCurrentOption={this.changeCurrentOption}
-                currentOptionId={this.props.currentOptionId}
-                style={this.getOptionStyle(option.id)} />);
         return (
-            <div>
-                {optionList}
-            </div>
+            this.props.options.map((option) =>
+                <OptionItem
+                    key={option.id}
+                    option={option}
+                    onCurrentOptionChange={this.handleCurrentOptionChange}
+                    currentOptionId={this.props.currentOptionId}
+                    style={this.getOptionStyle(option.id)} />)
         )
     }
 }
