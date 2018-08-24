@@ -1,7 +1,7 @@
 import React from 'react';
 import Control from '../control/Control.jsx';
 import OptionList from './OptionList.jsx';
-import ANSWER_STAGE from '../../../modules/AnswerStage.js';
+import ANSWER_STAGE from '../../../constants/answerStage.js';
 
 class Answer extends React.Component {
     constructor(props) {
@@ -26,11 +26,15 @@ class Answer extends React.Component {
     handleOptionReset() {
         this.setState({currentOptionId: null});
     }
-
+    
+    handleScoreChange() {
+        this.props.onScoreChange();
+    }
+    
     handleQuestionAnswerChange() {
         switch (this.state.stage) {
             case ANSWER_STAGE.ANSWER:
-                this.isOptionRight() && this.props.onScoreChange();
+                this.isOptionRight() && this.handleScoreChange();
                 this.handleStateChange(ANSWER_STAGE.NEXT);
                 break;
             case ANSWER_STAGE.NEXT:

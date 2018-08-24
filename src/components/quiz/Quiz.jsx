@@ -7,9 +7,10 @@ class Quiz extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentQuestionId: 0
+            currentQuestionId: 0,
+            score: 0
         };
-        this.onScoreChange = this.props.onScoreChange;
+        this.handleScoreChange = this.handleScoreChange.bind(this);
         this.handleQuestionChange = this.handleQuestionChange.bind(this);
     }
 
@@ -19,11 +20,17 @@ class Quiz extends React.Component {
         }));
     }
 
-    isLastQuestion() {
-        return (this.state.currentQuestionId >= this.props.questions.length);
+    handleScoreChange() {
+        this.setState((prevState) => ({
+            score: prevState.score + 1
+        }));
     }
 
-    getCurrentQuestion = () => {
+    isLastQuestion(id) {
+        return id >= this.props.questions.length;
+    }
+
+    getCurrentQuestion() {
         const question = this.props.questions[this.state.currentQuestionId];
         if (question) {
             return question
@@ -32,24 +39,28 @@ class Quiz extends React.Component {
         }
     }
 
-    render() {
-        if (this.isLastQuestion()) {
-            this.props.onQuizFinish();
-            return null;
+    shouldComponentUpdate(_, nextState) {
+        if (this.isLastQuestion(nextState.currentQuestionId)) {
+            this.props.onQuizFinish(nextState.score);
+            return false;
         } else {
+            return true;
+        }
+    }
+
+    render() {
             return [
                 <Question key="question" question={this.getCurrentQuestion()} />,
                 <Answer
                     key="answer"
                     question={this.getCurrentQuestion()}
-                    onScoreChange={this.onScoreChange}
+                    onScoreChange={this.handleScoreChange}
                     onQuestionChange={this.handleQuestionChange} />,
                 <Progress
                     key="progress"
-                    currentQuestionId={this.state.currentQuestionId + 1}
+                    questionNumber={this.state.currentQuestionId + 1}
                     questionCount={this.props.questions.length} />
             ]
-        }
     }
 }
 

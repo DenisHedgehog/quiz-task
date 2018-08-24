@@ -1,5 +1,5 @@
 import React from 'react';
-import ANSWER_STAGE from '../../../modules/AnswerStage.js';
+import ANSWER_STAGE from '../../../constants/answerStage.js';
 
 function Button({currentOptionId, onQuestionAnswerChange, text, stage}) {
     function getButtonStyle() {

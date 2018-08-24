@@ -1,6 +1,6 @@
 import React from 'react';
 import OptionItem from './OptionItem.jsx';
-import ANSWER_STAGE from '../../../modules/AnswerStage.js';
+import ANSWER_STAGE from '../../../constants/answerStage.js';
 
 export default class OptionList extends React.Component {
     constructor(props) {
