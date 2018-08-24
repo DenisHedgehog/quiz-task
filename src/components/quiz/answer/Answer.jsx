@@ -1,12 +1,13 @@
 import React from 'react';
 import Control from '../control/Control.jsx';
 import OptionList from './OptionList.jsx';
+import ANSWER_STAGE from '../../../modules/AnswerStage.js';
 
 class Answer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            stage: 'Answer',
+            stage: ANSWER_STAGE.ANSWER,
             currentOptionId: null
         };
         this.handleQuestionAnswerChange = this.handleQuestionAnswerChange.bind(this);
@@ -28,14 +29,14 @@ class Answer extends React.Component {
 
     handleQuestionAnswerChange() {
         switch (this.state.stage) {
-            case 'Answer':
+            case ANSWER_STAGE.ANSWER:
                 this.isOptionRight() && this.props.onScoreChange();
-                this.handleStateChange('Next');
+                this.handleStateChange(ANSWER_STAGE.NEXT);
                 break;
-            case 'Next':
-                this.props.handleQuestionChange();
+            case ANSWER_STAGE.NEXT:
+                this.props.onQuestionChange();
                 this.handleOptionReset();
-                this.handleStateChange('Answer');
+                this.handleStateChange(ANSWER_STAGE.ANSWER);
                 break;
         }
     }

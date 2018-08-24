@@ -2,14 +2,14 @@ import React from 'react';
 import Button from './Button.jsx';
 import AnswerStatus from './AnswerStatus.jsx';
 
-const Control = (props) => (
+const Control = ({stage, status, isOptionRight, onQuestionAnswerChange, currentOptionId}) => (
     <div className="control">
-        <AnswerStatus stage={props.stage} status={props.status} isOptionRight={props.isOptionRight} />
+        <AnswerStatus stage={stage} status={status} isOptionRight={isOptionRight} />
         <Button
-            onClick={props.onQuestionAnswerChange}
-            stage={props.stage}
-            text={props.stage}
-            currentOptionId={props.currentOptionId} />
+            onQuestionAnswerChange={onQuestionAnswerChange}
+            stage={stage}
+            text={stage}
+            currentOptionId={currentOptionId} />
     </div>
 )
 

@@ -9,7 +9,7 @@ class App extends React.Component {
         this.state = {
             isFinished: false,
             score: 0,
-            hasError: null
+            error: null
         };
         this.handleScoreChange = this.handleScoreChange.bind(this);
         this.handleQuizFinish = this.handleQuizFinish.bind(this);
@@ -17,7 +17,7 @@ class App extends React.Component {
     
     componentDidCatch(error) {
         alert(`Error: ${error.message}`)
-        this.setState({ hasError: error.message });
+        this.setState({ error: error.message });
     }
 
     handleScoreChange() {
@@ -35,7 +35,7 @@ class App extends React.Component {
             <div className="app">
                 {
                     !this.state.isFinished ?
-                        <Quiz hasError={this.props.hasError} questions={this.props.questions} onScoreChange={this.handleScoreChange} handleQuizFinish={this.handleQuizFinish} /> :
+                        <Quiz questions={this.props.questions} onScoreChange={this.handleScoreChange} onQuizFinish={this.handleQuizFinish} /> :
                         <Result score={this.state.score} />
                 }
             </div>

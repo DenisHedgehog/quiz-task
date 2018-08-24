@@ -1,15 +1,13 @@
 import React from 'react';
 import Question from './question/Question.jsx';
 import Progress from './Progress.jsx';
-import ErrorPage from './ErrorPage.jsx';
 import Answer from './answer/Answer.jsx';
 
 class Quiz extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentQuestionId: 0,
-            score: 0
+            currentQuestionId: 0
         };
         this.onScoreChange = this.props.onScoreChange;
         this.handleQuestionChange = this.handleQuestionChange.bind(this);
@@ -35,12 +33,8 @@ class Quiz extends React.Component {
     }
 
     render() {
-        if (this.props.hasError) {
-            console.log(this.props.hasError)
-            return <ErrorPage error={this.props.hasError} />
-        }
         if (this.isLastQuestion()) {
-            this.props.handleQuizFinish();
+            this.props.onQuizFinish();
             return null;
         } else {
             return [
@@ -49,7 +43,7 @@ class Quiz extends React.Component {
                     key="answer"
                     question={this.getCurrentQuestion()}
                     onScoreChange={this.onScoreChange}
-                    handleQuestionChange={this.handleQuestionChange} />,
+                    onQuestionChange={this.handleQuestionChange} />,
                 <Progress
                     key="progress"
                     currentQuestionId={this.state.currentQuestionId + 1}

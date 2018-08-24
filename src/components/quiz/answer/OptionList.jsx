@@ -1,5 +1,6 @@
 import React from 'react';
 import OptionItem from './OptionItem.jsx';
+import ANSWER_STAGE from '../../../modules/AnswerStage.js';
 
 export default class OptionList extends React.Component {
     constructor(props) {
@@ -8,13 +9,13 @@ export default class OptionList extends React.Component {
     }
 
     handleCurrentOptionChange(id) {
-        if (this.props.stage === 'Answer') {
+        if (this.props.stage === ANSWER_STAGE.ANSWER) {
             this.props.onCurrentOptionIdChange(id);
         }
     }
 
     getOptionStyle(id) {
-        if (this.props.stage === 'Next') {
+        if (this.props.stage === ANSWER_STAGE.NEXT) {
             switch (true) {
                 case this.props.correctOptionId === id:
                     return 'option option_correct';

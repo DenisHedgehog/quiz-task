@@ -9,5 +9,6 @@ getQuestions().then(questions => {
 })
 
 function getQuestions() {
-    return fetch('questions.json').then((res) => res.json());
+    return fetch('questions.json').then((res) => 
+    res.ok ? res.json() : alert('Question fetch failed'));
 }
