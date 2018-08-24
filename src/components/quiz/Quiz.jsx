@@ -31,17 +31,15 @@ class Quiz extends React.Component {
     }
 
     getCurrentQuestion() {
-        const question = this.props.questions[this.state.currentQuestionId];
-        if (question) {
-            return question
-        } else {
-            throw Error('Question not found');
-        }
+        const curr = this.state.currentQuestionId;
+        const length = this.props.questions.length;
+        return (curr >= length) ?
+            this.props.questions[length - 1] : this.props.questions[curr];
     }
 
-    shouldComponentUpdate(_, nextState) {
-        if (this.isLastQuestion(nextState.currentQuestionId)) {
-            this.props.onQuizFinish(nextState.score);
+    componentDidUpdate(_, prevState) {
+        if (this.isLastQuestion(prevState.currentQuestionId + 1)) {
+            this.props.onQuizFinish(prevState.score);
             return false;
         } else {
             return true;
