@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Control from '../control/Control.jsx';
 import OptionList from './OptionList.jsx';
 import ANSWER_STAGE from '../../../constants/answerStage.js';
@@ -51,21 +51,21 @@ class Answer extends React.Component {
 
     render() {
         return (
-            [
+            <Fragment>
                 <OptionList
                     key="option-list"
                     stage={this.state.stage}
                     options={this.props.question.options}
                     correctOptionId={this.props.question.correctOptionId}
                     currentOptionId={this.state.currentOptionId}
-                    onCurrentOptionIdChange={this.handleCurrentOptionIdChange} />,
+                    onCurrentOptionIdChange={this.handleCurrentOptionIdChange} />
                 <Control
                     key="control"
                     stage={this.state.stage}
                     onQuestionAnswerChange={this.handleQuestionAnswerChange}
                     isOptionRight={this.isOptionRight}
                     currentOptionId={this.state.currentOptionId} />
-            ]
+            </Fragment>
         );
     }
 }

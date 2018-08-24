@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Question from './question/Question.jsx';
 import Progress from './Progress.jsx';
 import Answer from './answer/Answer.jsx';
@@ -47,18 +47,20 @@ class Quiz extends React.Component {
     }
 
     render() {
-            return [
-                <Question key="question" question={this.getCurrentQuestion()} />,
+        return (
+            <Fragment>
+                <Question key="question" question={this.getCurrentQuestion()} />
                 <Answer
                     key="answer"
                     question={this.getCurrentQuestion()}
                     onScoreChange={this.handleScoreChange}
-                    onQuestionChange={this.handleQuestionChange} />,
+                    onQuestionChange={this.handleQuestionChange} />
                 <Progress
                     key="progress"
                     questionNumber={this.state.currentQuestionId + 1}
                     questionCount={this.props.questions.length} />
-            ]
+            </Fragment>
+        );
     }
 }
 
