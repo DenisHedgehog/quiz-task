@@ -1,0 +1,162 @@
+[
+    {
+        "id": 0,
+        "question": "What is React?",
+        "img": "",
+        "options": [
+            {
+                "id": 0,
+                "option": "A JavaScript framework"
+            },
+            {
+                "id": 1,
+                "option": "CSS preprocessor"
+            },
+            {
+                "id": 2,
+                "option": "Language that compiles to CoffeeScript"
+            }
+        ],
+        "correctOptionId": 0 
+    },
+    {
+        "id": 1,
+        "question": "Who made React?",
+        "img": "",
+        "options": [
+            {
+                "id": 0,
+                "option": "Google"
+            },
+            {
+                "id": 1,
+                "option": "Twitter"
+            },
+            {
+                "id": 2,
+                "option": "Facebook"
+            }
+        ],
+        "correctOptionId": 2 
+    },
+    {
+        "id": 2,
+        "question": "What is React used for?",
+        "img": "",
+        "options": [
+            {
+                "id": 0,
+                "option": "Adding variables to CSS"
+            },
+            {
+                "id": 1,
+                "option": "Building web apps"
+            },
+            {
+                "id": 2,
+                "option": "Making websites cloud-ready"
+            }
+        ],
+        "correctOptionId": 1 
+    },
+    {
+        "id": 3,
+        "question": "What is special about React?",
+        "img": "",
+        "options": [
+            {
+                "id": 0,
+                "option": "It brings HTML6 features to today's browsers"
+            },
+            {
+                "id": 1,
+                "option": "Virtual DOM"
+            },
+            {
+                "id": 2,
+                "option": "Database integration"
+            }
+        ],
+        "correctOptionId": 1 
+    },
+    {
+        "id": 4,
+        "question": "Which language is this?",
+        "img": "./src/assets/5.png",
+        "options": [
+            {
+                "id": 0,
+                "option": "JavaScript"
+            },
+            {
+                "id": 1,
+                "option": "CoffeeScript"
+            },
+            {
+                "id": 2,
+                "option": "JSX"
+            }
+        ],
+        "correctOptionId": 2 
+    },
+    {
+        "id": 5,
+        "question": "What does this component do?",
+        "img": "./src/assets/6.png",
+        "options": [
+            {
+                "id": 0,
+                "option": "Prints \"Hello World!\""
+            },
+            {
+                "id": 1,
+                "option": "Prints \"Hello\", followed by the name attribute that was passed when initializing the component"
+            },
+            {
+                "id": 2,
+                "option": "Prints the numbers from 1 to 10."
+            }
+        ],
+        "correctOptionId": 1 
+    },
+    {
+        "id": 6,
+        "question": "What does this code do?",
+        "img": "./src/assets/7.png",
+        "options": [
+            {
+                "id": 0,
+                "option": "Provides an initial value for the component's state"
+            },
+            {
+                "id": 1,
+                "option": "Tells how many times the component should be focused"
+            },
+            {
+                "id": 2,
+                "option": "Seeds a random number generator"
+            }
+        ],
+        "correctOptionId": 0
+    },
+    {
+        "id": 7,
+        "question": "What does this code do?",
+        "img": "./src/assets/8.png",
+        "options": [
+            {
+                "id": 0,
+                "option": "Initializes a new UL component, and generates LI components for each entry in the items array property."
+            },
+            {
+                "id": 1,
+                "option": "Initializes a Google Map for every location in the items array"
+            },
+            {
+                "id": 2,
+                "option": "It won't work"
+            }
+        ],
+        "correctOptionId": 0
+    }
+]
