@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import Control from '../control/Control.jsx';
 import OptionList from './OptionList.jsx';
 import ANSWER_STAGE from '../../../constants/answerStage.js';
-import styled from 'styled-components';
 
 class Answer extends React.Component {
     constructor(props) {
