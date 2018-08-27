@@ -1,11 +1,19 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const StyledProgress = styled.p`
+    color: rgba(0, 0, 0, 0.4);
+`;
+
+const BoldText = styled.span`
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.5);
+`;
 
 const Progress = ({questionNumber, questionCount}) => (
-    <p className="progress text_color_light">
-        <span className="text_bold text_color_mid">{questionNumber}</span>
-        {' '}of{' '}
-        <span className="text_bold text_color_mid">{questionCount}</span>
-    </p>
+    <StyledProgress>
+        <BoldText>{questionNumber}</BoldText> of <BoldText>{questionCount}</BoldText>
+    </StyledProgress>
 )
 
 export default Progress;

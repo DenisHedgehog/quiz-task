@@ -1,5 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const Text = ({text}) => <h1 className="text_color_mid">{text}</h1>;
+const StyledHeader = styled.h1`
+    color: rgba(0, 0, 0, 0.5);
+`;
+
+const Text = ({text}) => <StyledHeader>{text}</StyledHeader>;
 
 export default Text;
