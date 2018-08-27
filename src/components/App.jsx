@@ -2,6 +2,21 @@ import '../css/index.css';
 import React from 'react';
 import Result from './Result.jsx';
 import Quiz from './quiz/Quiz.jsx';
+import styled, { injectGlobal } from 'styled-components';
+
+injectGlobal`
+    body {
+        background-color: aliceblue;
+        font-family: 'Nunito', sans-serif;
+    }
+`;
+
+const AppWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
 
 class App extends React.Component {
     constructor(props) {
@@ -25,13 +40,13 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="app">
+            <AppWrapper>
                 {
                     !this.state.isFinished ?
                         <Quiz questions={this.props.questions} onQuizFinish={this.handleQuizFinish} /> :
                         <Result score={this.state.result} />
                 }
-            </div>
+            </AppWrapper>
         )
     }
 }

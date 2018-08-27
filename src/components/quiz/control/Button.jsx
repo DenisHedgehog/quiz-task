@@ -1,21 +1,20 @@
 import React from 'react';
-import ANSWER_STAGE from '../../../constants/answerStage.js';
+import styled from 'styled-components';
 
-function Button({currentOptionId, onQuestionAnswerChange, text, stage}) {
-    function getButtonStyle() {
-        let style = 'control__button text_size_mid';
-        if (stage === ANSWER_STAGE.ANSWER && currentOptionId === null) {
-            style += ' control__button_disabled';
-        }
-        return style;
-    }
+const StyledButton = styled.button`
+    font-size: 16px;
+    padding: 16px;
+    width: 120px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color: ${(props) => props.disabled ? 'lightgray' : 'dodgerblue'};
+`;
 
-    return (
-        <button
-            className={getButtonStyle()}
-            onClick={onQuestionAnswerChange}
-            disabled={currentOptionId === null}>{text}</button>
-    )
-}
+const Button = ({ currentOptionId, onQuestionAnswerChange, text }) => (
+    <StyledButton
+        onClick={onQuestionAnswerChange}
+        disabled={currentOptionId === null}>{text}</StyledButton>
+)
 
 export default Button;
