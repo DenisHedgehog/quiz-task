@@ -1,4 +1,3 @@
-import '../css/index.css';
 import React from 'react';
 import Result from './Result.jsx';
 import Quiz from './quiz/Quiz.jsx';
