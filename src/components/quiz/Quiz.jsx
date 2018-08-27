@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import Question from './question/Question.jsx';
 import Progress from './Progress.jsx';
 import Answer from './answer/Answer.jsx';
-import styled from 'styled-components';
 
 class Quiz extends React.Component {
     constructor(props) {
