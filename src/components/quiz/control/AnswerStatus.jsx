@@ -13,24 +13,11 @@ const StyledStatus = styled.div`
     align-items: center;
     justify-content:center;
     color: white;
-    background-color: ${(props) => props.isOptionRight ? 'green' : 'brown'};
-    visibility: ${(props) => props.stage === ANSWER_STAGE.NEXT ? 'visible' : 'hidden'};
-`;
-
-const StatusWrapper = styled.div`
-    position: absolute;
-    right: 65%;
-    @media (max-width: ${screenSize.TABLET}) {
-        right: 75%;
-    };
-    @media (max-width: ${screenSize.MOBILE}) {
-        right: 85%;
-    };
+    background-color: ${({isOptionRight}) => isOptionRight ? 'green' : 'brown'};
+    visibility: ${({stage}) => stage === ANSWER_STAGE.NEXT ? 'visible' : 'hidden'};
 `;
 
 const AnswerStatus = ({ stage, isOptionRight }) =>
-    <StatusWrapper>
-        <StyledStatus stage={stage} isOptionRight={isOptionRight}>{isOptionRight ? '✓' : '⨉'}</StyledStatus>
-    </StatusWrapper>
+    <StyledStatus stage={stage} isOptionRight={isOptionRight}>{isOptionRight ? '✓' : '⨉'}</StyledStatus>
 
 export default AnswerStatus;

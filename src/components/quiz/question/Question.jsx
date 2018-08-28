@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import mainTheme from '../../../constants/mainTheme.js'
 import screenSize from '../../../constants/screenSize.js';
 
 const StyledPicture = styled.img`
@@ -17,7 +16,7 @@ const StyledPicture = styled.img`
 `;
 
 const StyledHeader = styled.h1`
-    color: ${mainTheme.mid_color};
+    color: ${({theme}) => theme.mid_color};
 `;
 
 const Question = ({ question: { question, img } }) => (

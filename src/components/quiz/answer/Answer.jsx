@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Control from '../control/Control.jsx';
 import OptionList from './OptionList.jsx';
 import ANSWER_STAGE from '../../../constants/answerStage.js';

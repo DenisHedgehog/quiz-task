@@ -8,7 +8,7 @@ const StyledButton = styled.button`
     border: none;
     border-radius: 4px;
     color: white;
-    background-color: ${(props) => props.disabled ? 'lightgray' : 'dodgerblue'};
+    background-color: ${({ disabled }) => disabled ? 'lightgray' : 'dodgerblue'};
 `;
 
 const Button = ({ currentOptionId, onQuestionAnswerChange, text }) => (
