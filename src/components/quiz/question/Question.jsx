@@ -16,7 +16,7 @@ const StyledPicture = styled.img`
 `;
 
 const StyledHeader = styled.h1`
-    color: ${({theme}) => theme.mid_color};
+    color: ${({theme}) => theme.midColor};
 `;
 
 const Question = ({ question: { question, img } }) => (

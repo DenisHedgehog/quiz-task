@@ -24,7 +24,7 @@ const StatusWrapper = styled.div`
 const Control = ({ stage, status, isOptionRight, onQuestionAnswerChange, currentOptionId }) => (
     <ControlWrapper>
         <StatusWrapper>
-            <AnswerStatus stage={stage} status={status} isOptionRight={isOptionRight()} />
+            <AnswerStatus stage={stage} status={status} isOptionRight={isOptionRight} />
         </StatusWrapper>
         <Button
             onQuestionAnswerChange={onQuestionAnswerChange}

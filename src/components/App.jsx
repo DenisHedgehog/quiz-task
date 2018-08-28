@@ -16,7 +16,7 @@ const AppWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: ${({ theme }) => theme.bg_color};
+    background-color: ${({ theme }) => theme.bgColor};
     font-family: ${({ theme }) => theme.font};
 `;
 

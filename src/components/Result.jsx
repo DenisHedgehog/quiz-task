@@ -6,18 +6,18 @@ const ResultWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: ${({theme}) => theme.light_color};
+    color: ${({theme}) => theme.lightColor};
 `;
 
 const StyledHeader = styled.h1`
-    color: ${({theme}) => theme.mid_color};
+    color: ${({theme}) => theme.midColor};
 `;
 
 const ScoreWrapper = styled.div`
     width: 300px;
     padding: 16px;
     text-align: center;
-    background-color: ${({theme}) => theme.default_color};
+    background-color: ${({theme}) => theme.defaultColor};
     box-shadow: ${({theme}) => theme.shadow};
     font-size: 24px;
 `;

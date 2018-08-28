@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import BoldText from '../BoldText.jsx';
 
 const ProgressWrapper = styled.p`
-    color: ${({theme}) => theme.light_color};
+    color: ${({theme}) => theme.lightColor};
 `;
 
 const Progress = ({questionNumber, questionCount}) => (

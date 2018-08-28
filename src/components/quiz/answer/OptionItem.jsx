@@ -3,15 +3,15 @@ import styled from 'styled-components';
 import optionStyle from '../../../constants/optionStyle.js';
 import screenSize from '../../../constants/screenSize.js';
 
-const StyledOption = styled.div`
+const OptionWrapper = styled.div`
     background-color: ${({ theme, styleOption }) => {
         switch (styleOption) {
             case optionStyle.CORRECT:
-                return theme.correct_color;
+                return theme.correctColor;
             case optionStyle.INCORRECT:
-                return theme.incorrect_color;
+                return theme.incorrectColor;
             default:
-                return theme.default_color;
+                return theme.defaultColor;
         }
     }
     };
@@ -19,11 +19,11 @@ const StyledOption = styled.div`
     border-color: ${({ theme, styleOption }) => {
         switch (styleOption) {
             case optionStyle.CORRECT:
-                return theme.correct_border_color;
+                return theme.correctBorderColor;
             case optionStyle.INCORRECT:
-                return theme.incorrect_border_color;
+                return theme.incorrectBorderColor;
             default:
-                return theme.default_border_color;
+                return theme.defaultBorderColor;
         }
     }
     };
@@ -34,7 +34,7 @@ const StyledOption = styled.div`
     align-items: center;
     margin: 8px;
     cursor: pointer;
-    color: ${({ theme }) => theme.mid_color};
+    color: ${({ theme }) => theme.midColor};
 
     @media (max-width: ${screenSize.MOBILE}) {
         width: 90vw;
@@ -42,13 +42,13 @@ const StyledOption = styled.div`
 `;
 
 const OptionItem = ({ style, option, currentOptionId, onCurrentOptionChange }) => (
-    <StyledOption styleOption={style} onClick={() => onCurrentOptionChange(option.id)} >
+    <OptionWrapper styleOption={style} onClick={() => onCurrentOptionChange(option.id)} >
         <input
             name="answerItem"
             type="radio"
             checked={option.id === currentOptionId} />
         <p>{option.option}</p>
-    </StyledOption>
+    </OptionWrapper>
 )
 
 export default OptionItem;

@@ -63,7 +63,7 @@ class Answer extends React.Component {
                     key="control"
                     stage={this.state.stage}
                     onQuestionAnswerChange={this.handleQuestionAnswerChange}
-                    isOptionRight={this.isOptionRight}
+                    isOptionRight={this.isOptionRight()}
                     currentOptionId={this.state.currentOptionId} />
             </React.Fragment>
         );
