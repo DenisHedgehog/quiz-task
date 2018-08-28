@@ -9,7 +9,7 @@ const ProgressWrapper = styled.p`
 
 const Progress = ({questionNumber, questionCount}) => (
     <ProgressWrapper>
-        <BoldText text={questionNumber} /> of <BoldText text={questionCount} />
+        <BoldText>{questionNumber}</BoldText> of <BoldText>{questionCount}</BoldText>
     </ProgressWrapper>
 )
 

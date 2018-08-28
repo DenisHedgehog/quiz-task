@@ -18,7 +18,7 @@ const StyledScoreboard = styled.div`
     width: 300px;
     padding: 16px;
     text-align: center;
-    background-color: ${mainTheme.bg_color};
+    background-color: ${mainTheme.default_color};
     box-shadow: ${mainTheme.shadow};
     font-size: 24px;
 `;
@@ -28,7 +28,7 @@ const Result = ({ score, questionCount }) => (
         <StyledHeader>Great job!</StyledHeader>
         <StyledScoreboard>
             <p>
-                You guessed <BoldText text={score} /> of <BoldText text={questionCount} />!
+                You guessed <BoldText>{score}</BoldText> of <BoldText>{questionCount}</BoldText>!
             </p>
         </StyledScoreboard>
     </ResultWrapper>

@@ -42,7 +42,7 @@ class App extends React.Component {
         return (
             <AppWrapper>
                 {
-                    !this.state.isFinished ?
+                    this.state.isFinished ?
                         <Quiz questions={this.props.questions} onQuizFinish={this.handleQuizFinish} /> :
                         <Result score={this.state.result} questionCount={this.props.questions.length} />
                 }
