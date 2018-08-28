@@ -37,9 +37,9 @@ class Quiz extends React.Component {
             this.props.questions[length - 1] : this.props.questions[curr];
     }
 
-    componentDidUpdate(prevProps, prevState) {
-        if (this.isLastQuestion(prevState.currentQuestionId + 1)) {
-            prevProps.onQuizFinish(prevState.score);
+    componentDidUpdate(prevProps) {
+        if (this.isLastQuestion(this.state.currentQuestionId)) {
+            prevProps.onQuizFinish(this.state.score);
         }
     }
 

@@ -1,19 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import BoldText from '../BoldText.jsx';
+import mainTheme from '../../constants/mainTheme.js';
 
-const StyledProgress = styled.p`
-    color: rgba(0, 0, 0, 0.4);
-`;
-
-const BoldText = styled.span`
-    font-weight: 700;
-    color: rgba(0, 0, 0, 0.5);
+const ProgressWrapper = styled.p`
+    color: ${mainTheme.light_color};
 `;
 
 const Progress = ({questionNumber, questionCount}) => (
-    <StyledProgress>
-        <BoldText>{questionNumber}</BoldText> of <BoldText>{questionCount}</BoldText>
-    </StyledProgress>
+    <ProgressWrapper>
+        <BoldText text={questionNumber} /> of <BoldText text={questionCount} />
+    </ProgressWrapper>
 )
 
 export default Progress;

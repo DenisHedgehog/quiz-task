@@ -51,7 +51,7 @@ class Answer extends React.Component {
 
     render() {
         return (
-            <Fragment>
+            <React.Fragment>
                 <OptionList
                     key="option-list"
                     stage={this.state.stage}
@@ -65,7 +65,7 @@ class Answer extends React.Component {
                     onQuestionAnswerChange={this.handleQuestionAnswerChange}
                     isOptionRight={this.isOptionRight}
                     currentOptionId={this.state.currentOptionId} />
-            </Fragment>
+            </React.Fragment>
         );
     }
 }

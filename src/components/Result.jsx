@@ -1,37 +1,34 @@
 import React from 'react';
 import styled from 'styled-components';
+import BoldText from './BoldText.jsx';
+import mainTheme from '../constants/mainTheme.js';
 
 const ResultWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: rgba(0, 0, 0, 0.4);
+    color: ${mainTheme.light_color};
 `;
 
 const StyledHeader = styled.h1`
-    color: rgba(0, 0, 0, 0.5);
+    color: ${mainTheme.mid_color};
 `;
 
 const StyledScoreboard = styled.div`
     width: 300px;
     padding: 16px;
     text-align: center;
-    background-color: white;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    background-color: ${mainTheme.bg_color};
+    box-shadow: ${mainTheme.shadow};
     font-size: 24px;
 `;
 
-const BoldText = styled.span`
-    font-weight: 700;
-    color: rgba(0, 0, 0, 0.5);
-`;
-
-const Result = ({score}) => (
+const Result = ({ score, questionCount }) => (
     <ResultWrapper>
         <StyledHeader>Great job!</StyledHeader>
         <StyledScoreboard>
             <p>
-                You guessed <BoldText>{score}</BoldText> of <BoldText>8</BoldText>!
+                You guessed <BoldText text={score} /> of <BoldText text={questionCount} />!
             </p>
         </StyledScoreboard>
     </ResultWrapper>
