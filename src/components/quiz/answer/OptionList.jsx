@@ -17,14 +17,12 @@ export default class OptionList extends React.Component {
 
     getOptionStyle(id) {
         if (this.props.stage === ANSWER_STAGE.NEXT) {
-            switch (true) {
-                case this.props.correctOptionId === id:
-                    return optionStyle.CORRECT;
-                case this.props.currentOptionId === id && this.props.correctOptionId !== id:
-                    return optionStyle.INCORRECT;
-                default:
-                    return optionStyle.DEFAULT;
+            if (this.props.correctOptionId === id) {
+                return optionStyle.CORRECT;
+            } else if (this.props.currentOptionId === id && this.props.correctOptionId !== id) {
+                return optionStyle.INCORRECT;
             }
+            return optionStyle.DEFAULT;
         } else {
             return optionStyle.DEFAULT;
         }

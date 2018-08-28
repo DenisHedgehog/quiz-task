@@ -2,11 +2,12 @@ import React from 'react';
 import Result from './Result.jsx';
 import Quiz from './quiz/Quiz.jsx';
 import styled, { injectGlobal } from 'styled-components';
+import mainTheme from '../constants/mainTheme.js';
 
 injectGlobal`
     body {
-        background-color: aliceblue;
-        font-family: 'Nunito', sans-serif;
+        background-color: ${mainTheme.bg_color};
+        font-family: ${mainTheme.font};
     }
 `;
 
@@ -43,7 +44,7 @@ class App extends React.Component {
                 {
                     !this.state.isFinished ?
                         <Quiz questions={this.props.questions} onQuizFinish={this.handleQuizFinish} /> :
-                        <Result score={this.state.result} />
+                        <Result score={this.state.result} questionCount={this.props.questions.length} />
                 }
             </AppWrapper>
         )
