@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import optionStyle from '../../../constants/optionStyle.js';
 import screenSize from '../../../constants/screenSize.js';
 
-const Option = styled.div`
+const OptionWrapper = styled.div`
     background-color: ${({ theme, styleOption }) => {
         switch (styleOption) {
             case optionStyle.CORRECT:
@@ -42,13 +42,13 @@ const Option = styled.div`
 `;
 
 const OptionItem = ({ style, option, currentOptionId, onCurrentOptionChange }) => (
-    <Option styleOption={style} onClick={() => onCurrentOptionChange(option.id)} >
+    <OptionWrapper styleOption={style} onClick={() => onCurrentOptionChange(option.id)} >
         <input
             name="answerItem"
             type="radio"
             checked={option.id === currentOptionId} />
         <p>{option.option}</p>
-    </Option>
+    </OptionWrapper>
 )
 
 export default OptionItem;

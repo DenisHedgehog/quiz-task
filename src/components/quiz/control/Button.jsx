@@ -11,10 +11,10 @@ const ButtonWrapper = styled.button`
     background-color: ${({ theme, disabled }) => disabled ? theme.disabledButtonColor : theme.buttonColor};
 `;
 
-const Button = ({ currentOptionId, onQuestionAnswerChange, text }) => (
+const Button = ({ currentOptionId, onQuestionAnswerChange, children }) => (
     <ButtonWrapper
         onClick={onQuestionAnswerChange}
-        disabled={currentOptionId === null}>{text}</ButtonWrapper>
+        disabled={currentOptionId === null}>{children}</ButtonWrapper>
 )
 
 export default Button;

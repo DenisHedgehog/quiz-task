@@ -28,8 +28,7 @@ const Control = ({ stage, status, isOptionRight, onQuestionAnswerChange, current
         <Button
             onQuestionAnswerChange={onQuestionAnswerChange}
             stage={stage}
-            text={stage}
-            currentOptionId={currentOptionId} />
+            currentOptionId={currentOptionId}>{stage}</Button>
     </ControlWrapper>
 )
 
