@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledButton = styled.button`
+const ButtonWrapper = styled.button`
     font-size: 16px;
     padding: 16px;
     width: 120px;
@@ -12,9 +12,9 @@ const StyledButton = styled.button`
 `;
 
 const Button = ({ currentOptionId, onQuestionAnswerChange, text }) => (
-    <StyledButton
+    <ButtonWrapper
         onClick={onQuestionAnswerChange}
-        disabled={currentOptionId === null}>{text}</StyledButton>
+        disabled={currentOptionId === null}>{text}</ButtonWrapper>
 )
 
 export default Button;

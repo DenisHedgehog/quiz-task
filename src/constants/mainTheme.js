@@ -14,7 +14,7 @@ const mainTheme = {
     fontWeightBold: '700',
     shadow: '1px 1px 4px rgba(0, 0, 0, 0.2)',
     buttonColor: 'dodgerblue',
-    disabledButtonColor: 'rgba(0, 0, 0, 0.3)'
+    disabledButtonColor: 'rgba(0, 0, 0, 0.1)'
 }
 
 export default mainTheme;

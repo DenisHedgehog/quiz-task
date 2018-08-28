@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import BoldText from './BoldText.jsx';
 
-const StyledResult = styled.div`
+const ResultWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,12 +23,12 @@ const Scoreboard = styled.p`
 `;
 
 const Result = ({ score, questionCount }) => (
-    <StyledResult>
+    <ResultWrapper>
         <Header>Great job!</Header>
         <Scoreboard>
             You guessed <BoldText>{score}</BoldText> of <BoldText>{questionCount}</BoldText>!
         </Scoreboard>
-    </StyledResult>
+    </ResultWrapper>
 )
 
 export default Result;

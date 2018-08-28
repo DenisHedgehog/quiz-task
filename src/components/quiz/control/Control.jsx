@@ -4,14 +4,15 @@ import AnswerStatus from './AnswerStatus.jsx';
 import styled from 'styled-components';
 import screenSize from '../../../constants/screenSize.js';
 
-const StyledControl = styled.div`
+const ControlWrapper = styled.div`
     display: flex;
     padding: 32px;
     justify-content: center;
 `;
 
-const Status = styled.div`
+const StyledAnswerStatus = styled(AnswerStatus)`
     position: absolute;
+    color:white;
     right: 65%;
     @media (max-width: ${screenSize.TABLET}) {
         right: 75%;
@@ -22,16 +23,14 @@ const Status = styled.div`
 `;
 
 const Control = ({ stage, status, isOptionRight, onQuestionAnswerChange, currentOptionId }) => (
-    <StyledControl>
-        <Status>
-            <AnswerStatus stage={stage} status={status} isOptionRight={isOptionRight} />
-        </Status>
+    <ControlWrapper>
+        <StyledAnswerStatus stage={stage} status={status} isOptionRight={isOptionRight} />
         <Button
             onQuestionAnswerChange={onQuestionAnswerChange}
             stage={stage}
             text={stage}
             currentOptionId={currentOptionId} />
-    </StyledControl>
+    </ControlWrapper>
 )
 
 export default Control;

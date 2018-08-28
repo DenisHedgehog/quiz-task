@@ -7,16 +7,15 @@ const Status = styled.div`
     width: 50px;
     font-size: 16px;
     border-radius: 50%;
-    position: absolute;
     display:flex;
     align-items: center;
     justify-content:center;
-    color: white;
+    
     background-color: ${({ theme, isOptionRight }) => isOptionRight ? theme.correctIconColor : theme.incorrectIconColor};
     visibility: ${({ stage }) => stage === ANSWER_STAGE.NEXT ? 'visible' : 'hidden'};
 `;
 
-const AnswerStatus = ({ stage, isOptionRight }) =>
-    <Status stage={stage} isOptionRight={isOptionRight}>{isOptionRight ? '✓' : '⨉'}</Status>
+const AnswerStatus = ({ className, stage, isOptionRight }) =>
+    <Status className={className} stage={stage} isOptionRight={isOptionRight}>{isOptionRight ? '✓' : '⨉'}</Status>
 
 export default AnswerStatus;
