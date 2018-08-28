@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import screenSize from '../../../constants/screenSize.js';
 
-const StyledPicture = styled.img`
+const Picture = styled.img`
     padding: 8px;
     width: 50vh;
 
@@ -15,14 +15,14 @@ const StyledPicture = styled.img`
     }
 `;
 
-const StyledHeader = styled.h1`
+const Header = styled.h1`
     color: ${({theme}) => theme.midColor};
 `;
 
 const Question = ({ question: { question, img } }) => (
     <React.Fragment>
-        <StyledHeader>{question}</StyledHeader>
-        {img.length > 0 && <StyledPicture src={img} alt=""/>}
+        <Header>{question}</Header>
+        {img.length > 0 && <Picture src={img} alt=""/>}
     </React.Fragment>
 )
 

@@ -20,17 +20,17 @@ class Answer extends React.Component {
     }
 
     handleStateChange(stage) {
-        this.setState({stage});
+        this.setState({ stage });
     }
 
     handleOptionReset() {
-        this.setState({currentOptionId: null});
+        this.setState({ currentOptionId: null });
     }
-    
+
     handleScoreChange() {
         this.props.onScoreChange();
     }
-    
+
     handleQuestionAnswerChange() {
         switch (this.state.stage) {
             case ANSWER_STAGE.ANSWER:
@@ -46,7 +46,7 @@ class Answer extends React.Component {
     }
 
     handleCurrentOptionIdChange(currentOptionId) {
-        this.setState({currentOptionId});
+        this.setState({ currentOptionId });
     }
 
     render() {

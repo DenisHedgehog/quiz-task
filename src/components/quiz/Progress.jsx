@@ -2,14 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import BoldText from '../BoldText.jsx';
 
-const ProgressWrapper = styled.p`
-    color: ${({theme}) => theme.lightColor};
+const StyledProgress = styled.p`
+    color: ${({ theme }) => theme.lightColor};
 `;
 
-const Progress = ({questionNumber, questionCount}) => (
-    <ProgressWrapper>
+const Progress = ({ questionNumber, questionCount }) => (
+    <StyledProgress>
         <BoldText>{questionNumber}</BoldText> of <BoldText>{questionCount}</BoldText>
-    </ProgressWrapper>
+    </StyledProgress>
 )
 
 export default Progress;

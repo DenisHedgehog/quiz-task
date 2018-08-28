@@ -46,9 +46,9 @@ class App extends React.Component {
                 <AppWrapper>
                     {
                         this.state.isFinished ?
-                            <Result score={this.state.result} questionCount={this.props.questions.length} /> : 
+                            <Result score={this.state.result} questionCount={this.props.questions.length} /> :
                             < Quiz questions={this.props.questions} onQuizFinish={this.handleQuizFinish} />
-            }
+                    }
                 </AppWrapper>
             </ThemeProvider>
         )
