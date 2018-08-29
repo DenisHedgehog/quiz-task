@@ -1,7 +1,24 @@
-import '../css/index.css';
 import React from 'react';
 import Result from './Result.jsx';
 import Quiz from './quiz/Quiz.jsx';
+import styled, { injectGlobal, ThemeProvider } from 'styled-components';
+import mainTheme from '../constants/mainTheme.js';
+
+injectGlobal`
+    body {
+        margin: 0;
+    }
+`;
+
+const AppWrapper = styled.div`
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: ${({ theme }) => theme.bgColor};
+    font-family: ${({ theme }) => theme.font};
+`;
 
 class App extends React.Component {
     constructor(props) {
@@ -25,13 +42,15 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="app">
-                {
-                    !this.state.isFinished ?
-                        <Quiz questions={this.props.questions} onQuizFinish={this.handleQuizFinish} /> :
-                        <Result score={this.state.result} />
-                }
-            </div>
+            <ThemeProvider theme={mainTheme}>
+                <AppWrapper>
+                    {
+                        this.state.isFinished ?
+                            <Result score={this.state.result} questionCount={this.props.questions.length} /> :
+                            < Quiz questions={this.props.questions} onQuizFinish={this.handleQuizFinish} />
+                    }
+                </AppWrapper>
+            </ThemeProvider>
         )
     }
 }

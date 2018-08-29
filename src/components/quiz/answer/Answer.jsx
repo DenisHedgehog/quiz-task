@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Control from '../control/Control.jsx';
 import OptionList from './OptionList.jsx';
 import ANSWER_STAGE from '../../../constants/answerStage.js';
@@ -20,17 +20,17 @@ class Answer extends React.Component {
     }
 
     handleStateChange(stage) {
-        this.setState({stage});
+        this.setState({ stage });
     }
 
     handleOptionReset() {
-        this.setState({currentOptionId: null});
+        this.setState({ currentOptionId: null });
     }
-    
+
     handleScoreChange() {
         this.props.onScoreChange();
     }
-    
+
     handleQuestionAnswerChange() {
         switch (this.state.stage) {
             case ANSWER_STAGE.ANSWER:
@@ -46,12 +46,12 @@ class Answer extends React.Component {
     }
 
     handleCurrentOptionIdChange(currentOptionId) {
-        this.setState({currentOptionId});
+        this.setState({ currentOptionId });
     }
 
     render() {
         return (
-            <Fragment>
+            <React.Fragment>
                 <OptionList
                     key="option-list"
                     stage={this.state.stage}
@@ -63,9 +63,9 @@ class Answer extends React.Component {
                     key="control"
                     stage={this.state.stage}
                     onQuestionAnswerChange={this.handleQuestionAnswerChange}
-                    isOptionRight={this.isOptionRight}
+                    isOptionRight={this.isOptionRight()}
                     currentOptionId={this.state.currentOptionId} />
-            </Fragment>
+            </React.Fragment>
         );
     }
 }

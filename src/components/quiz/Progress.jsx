@@ -1,11 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
+import BoldText from '../BoldText.jsx';
 
-const Progress = ({questionNumber, questionCount}) => (
-    <p className="progress text_color_light">
-        <span className="text_bold text_color_mid">{questionNumber}</span>
-        {' '}of{' '}
-        <span className="text_bold text_color_mid">{questionCount}</span>
-    </p>
+const ProgressWrapper = styled.p`
+    color: ${({ theme }) => theme.lightColor};
+`;
+
+const Progress = ({ questionNumber, questionCount }) => (
+    <ProgressWrapper>
+        <BoldText>{questionNumber}</BoldText> of <BoldText>{questionCount}</BoldText>
+    </ProgressWrapper>
 )
 
 export default Progress;
