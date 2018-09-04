@@ -17,4 +17,4 @@ const mainTheme = {
     disabledButtonColor: 'rgba(0, 0, 0, 0.1)'
 }
 
-export default mainTheme;
+export default mainTheme

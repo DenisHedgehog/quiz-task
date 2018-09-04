@@ -41,8 +41,8 @@ module.exports = {
             template: 'src/index.html'
         }),
         new CopyWebpackPlugin([
-            { from: './questions.json', to: './dist' },
-            { from: './src/assets/*', to: './dist/assets' }
+            { from: './questions.json', to: './' },
+            { from: './src/assets/*', to: './assets' }
         ])
     ]
 };

@@ -22,13 +22,10 @@ const StyledAnswerStatus = styled(AnswerStatus)`
     };
 `;
 
-const Control = ({ stage, status, isOptionRight, onQuestionAnswerChange, currentOptionId }) => (
+const Control = ({ stage, status, isOptionRight, currentOptionId, onQuestionAnswer }) => (
     <ControlWrapper>
         <StyledAnswerStatus stage={stage} status={status} isOptionRight={isOptionRight} />
-        <Button
-            onQuestionAnswerChange={onQuestionAnswerChange}
-            stage={stage}
-            currentOptionId={currentOptionId}>{stage}</Button>
+        <Button stage={stage} currentOptionId={currentOptionId} onQuestionAnswer={onQuestionAnswer}>{stage}</Button>
     </ControlWrapper>
 )
 

@@ -7,11 +7,11 @@ const ResultWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     color: ${({ theme }) => theme.lightColor};
-`;
+`
 
 const Header = styled.h1`
     color: ${({ theme }) => theme.midColor};
-`;
+`
 
 const Scoreboard = styled.p`
     width: 300px;
@@ -20,7 +20,7 @@ const Scoreboard = styled.p`
     background-color: ${({ theme }) => theme.defaultColor};
     box-shadow: ${({ theme }) => theme.shadow};
     font-size: 24px;
-`;
+`
 
 const Result = ({ score, questionCount }) => (
     <ResultWrapper>
@@ -31,4 +31,4 @@ const Result = ({ score, questionCount }) => (
     </ResultWrapper>
 )
 
-export default Result;
+export default Result

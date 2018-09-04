@@ -1,22 +1,22 @@
 import React from 'react';
 import OptionItem from './OptionItem.jsx';
-import ANSWER_STAGE from '../../../constants/answerStage.js';
+import answerStage from '../../../constants/answerStage.js';
 import optionStyle from '../../../constants/optionStyle.js'
 
-export default class OptionList extends React.Component {
+class OptionList extends React.Component {
     constructor(props) {
         super(props);
         this.handleCurrentOptionChange = this.handleCurrentOptionChange.bind(this);
     }
 
     handleCurrentOptionChange(id) {
-        if (this.props.stage === ANSWER_STAGE.ANSWER) {
-            this.props.onCurrentOptionIdChange(id);
+        if (this.props.stage === answerStage.ANSWER) {
+            this.props.changeCurrentOptionId(id);
         }
     }
 
     getOptionStyle(id) {
-        if (this.props.stage === ANSWER_STAGE.NEXT) {
+        if (this.props.stage === answerStage.NEXT) {
             if (this.props.correctOptionId === id) {
                 return optionStyle.CORRECT;
             } else if (this.props.currentOptionId === id && this.props.correctOptionId !== id) {
@@ -40,3 +40,5 @@ export default class OptionList extends React.Component {
         )
     }
 }
+
+export default OptionList

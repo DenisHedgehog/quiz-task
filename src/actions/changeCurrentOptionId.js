@@ -1,0 +1,1 @@
+export default (optionId) => ({ type: 'CHANGE_OPTION', payload: optionId })
