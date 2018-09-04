@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const ButtonWrapper = styled.button`
     font-size: 16px;
@@ -9,12 +9,12 @@ const ButtonWrapper = styled.button`
     border-radius: 4px;
     color: white;
     background-color: ${({ theme, disabled }) => disabled ? theme.disabledButtonColor : theme.buttonColor};
-`;
+`
 
-const Button = ({ currentOptionId, onQuestionAnswerChange, children }) => (
+const Button = ({ currentOptionId, onQuestionAnswer, children }) => (
     <ButtonWrapper
-        onClick={onQuestionAnswerChange}
+        onClick={onQuestionAnswer}
         disabled={currentOptionId === null}>{children}</ButtonWrapper>
 )
 
-export default Button;
+export default Button
